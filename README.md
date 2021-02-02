@@ -2,7 +2,8 @@
 a simulation model that evaluates the current mitigation measures (i.e., non-pharmaceutical intervention) that are applied to a region and provides insight into what strength the upcoming mitigation measure should be and for how long it should be applied, while considering the potential effect of environmental conditions. Our model accurately forecasts the numbers of infected and hospitalized patients, and deaths for a given day. Described by Alser et al. (preliminary version at ...).
 
 ## <a name="started"></a>Getting Started
-```Install Xcode
+```
+    Install Xcode
     Add New Swift Project
     Use COVIDHunter/src/COVIDHunter.swift
     Run the project
