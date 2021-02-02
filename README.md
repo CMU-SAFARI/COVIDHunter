@@ -1,4 +1,4 @@
-# COVIDHunter 🦠:gun:: An Accurate, Flexible, and Environment-Aware Open-Source COVID-19 Outbreak Simulation Model
+# COVIDHunter 🦠:construction:: An Accurate, Flexible, and Environment-Aware Open-Source COVID-19 Outbreak Simulation Model
 A COVID-19 simulation model that evaluates the current mitigation measures (i.e., non-pharmaceutical intervention) that are applied to a region and provides insight into what strength the upcoming mitigation measure should be and for how long it should be applied, while considering the potential effect of environmental conditions. Our model accurately forecasts the numbers of infected and hospitalized patients, and deaths for a given day. Described by Alser et al. (preliminary version at ...).
 
 <p align="center">
