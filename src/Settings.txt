@@ -1,0 +1,108 @@
+
+// *** Start of user settings (change these to run an experiment) ***
+let START_MONTH = 1 // Start simulation on January 1st (use normal 1-12 representation for month here)
+let NUM_DAYS = 730 // maximum number of days simulated (2 years)
+let FIRST_INFECTION_DAY = 45 // Day first infection is imported into population.
+let POPULATION = 8654622 // Population size to simulate (in this case Swiss population in 2020)
+let MIN_INCUBATION_DAYS = 1 // minimum number of days from being infected to being contagious
+let MAX_INCUBATION_DAYS = 5 // maximum number of days from being infected to being contagious
+let MAX_VICTIMS = 25 // maximum number of folks one person can infect (minimum is always 0). Assumes a normal distribution
+let TRAVEL_SICK_RATE = 15 // percent chance a traveler returning from a trip abroad is contagious and undetected
+let TRAVELERS_PER_DAY = 100 // Number of travelers entering country from abroad every day as of first travel day
+let FIRST_TRAVEL_DAY = 45 // Point at which potentially infected travelers (some of whom are contagious) start entering country
+let LAST_TRAVEL_DAY = 9999 // Point at which borders are closed/all travelers placed in strict quarantine
+// Intrinsic r value excluding immunity at 15 degree C for a given population -- average number of folks an infected person gives the virus to (but some may already be immune). This is a function of the infectiousnessof the virus given normal (unaware of virus) population behavior and 15 degree C temp.
+let R0_INTRINSIC = 2.7 //https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008031#pcbi.1008031.s001
+// Brazil's model: Temperature dependence parameters
+let TEMP_SCALING_FACTOR = 0.05 // Linear scaling of infectiousness per degree temperature drop. 0.05 => 5% more infectious per degree of temperature drop
+let TEMP_SCALING_FLOOR = 10.0 // Limit temperature below which linear temperature scaling is no longer applied to the R0 value.
+let TEMP_SCALING_CEILING = 26.0 // Limit temperature above which linear temperature scaling is no longer applied to the R0 value.
+
+// CTC's model: Temperature dependence parameters
+let TEMP_SCALING_FACTOR_CTC = 0.0367 // Linear scaling of infectiousness per degree temperature drop. 0.05 => 5% more infectious per degree of temperature drop
+let TEMP_SCALING_FLOOR_CTC = 1.0 // Limit temperature below which linear temperature scaling is no longer applied to the R0 value.
+let TEMP_SCALING_CEILING_CTC = 29.0 // Limit temperature above which linear temperature scaling is no longer applied to the R0 value.
+
+// Harvard CRW model
+let CRW_Harvard = [0.997142857, 0.992428571, 0.998857143, 1.002714286, 0.995571429, 0.990714286, 0.978571429, 0.964571429, 0.948428571, 0.923571429, 0.902571429, 0.902285714, 0.900428571, 0.865, 0.869285714, 0.869, 0.858142857, 0.847857143, 0.851, 0.857142857, 0.851, 0.843428571, 0.85, 0.856428571, 0.851428571, 0.845428571, 0.84, 0.841857143, 0.846857143, 0.848714286, 0.841, 0.833571429, 0.836285714, 0.849714286, 0.864428571, 0.874142857, 0.890714286, 0.902428571, 0.906285714, 0.922714286, 0.945142857, 0.960285714, 0.959285714, 0.984285714, 1.018142857, 1.034285714, 1.017714286, 1.026428571, 1.037142857]
+let CRW_Harvard_TRANSITIONS = [3, 10, 17, 24, 31, 38, 44, 51, 58, 66, 73, 80, 87, 116, 123, 130, 137, 144, 151, 158, 165, 172, 179, 186, 193, 200, 207, 214, 221, 228, 235, 242, 249, 256, 263, 270, 277, 284, 291, 298, 305, 312, 319, 326, 333, 340, 347, 354, 361]
+
+// Fei Wang's "High Temperature and High Humidity Reduce the Transmission of COVID-19"
+//  Before lockdown in China and the U.S.:
+//  1) one-degree Celsius increase in temperature reduces R value by about 0.023 in China and 0.020 in the U.S.
+//  2) one percent relative humidity rise reduces R value by about 0.0078 in China and 0.0080 in the U.S.
+
+//  After lockdown, For China, it's statistically significant (with p values lower than 0.05), and one-degree Celsius increase in temperature and one percent increase in relative humidity reduce R values by 0.0209 and 0.0054, respectively.  For the U.S. the estimated effects of the temperature and relative humidity on R values are still negative but no longer statistically significant (with p values 0.141 and 0.073, respectively).
+let Wang_TEMP_SCALING_FACTOR = 0.02 // Linear scaling of infectiousness per degree temperature drop. 0.05 => 5% more infectious per degree of temperature drop
+let Wang_Humidity_SCALING_FACTOR = 0.008 // Linear scaling of infectiousness per degree temperature drop. 0.05 => 5% more infectious per degree of temperature drop
+
+
+// Average temperature data by month (high and low) in degrees C. At this point daily temperatures are used so only the high value is factored in
+let TEMP_MONTHLY_HIGH = [4, 6, 11, 15, 19, 23, 25, 24, 20, 15, 9, 5]
+let TEMP_November_HIGH = [13, 15, 12, 12, 8, 8, 8, 3, 6, 6, 9, 6, 5, 6, 4, 5, 2, 4, 3, 6, 7, 7, 8, 9, 9, 10, 9, 7, 4, 5]
+let TEMP_MONTHLY_LOW = [-1, 0, 3,  6, 10, 13,  15, 15, 12, 8,  3, 0]
+// Relative humidity https://www.worlddata.info/europe/switzerland/climate.php
+let Humidity_MONTHLY_HIGH = [80, 77, 71, 69, 71, 70, 68, 72, 76, 80, 80, 80]
+
+// Mitigation factor, M changes with time and addresses to what extent the population takes mitigation measures to
+// protect themselves from the virus. Mitigation measures include items like social distancing, handwashing,
+// contract tracing, quarantine, and lockdowns. A Mitigation value of 0.0 implies no mitigation whatsoever while a
+// mitigation value of 1.0 implies perfect isolation of all infected individuals so no further spread is possible.
+// Note: the M value and corresponding initial day for the transition need to line up 1:1 as shown below.
+//////////////////////////////////////////////////////////////////Brazil Temperature model
+// This is to fit the curve with 100%
+//let M =           [0, 0.2233, 0.329, 0.384, 0.4, 0.4444, 0.7315, 0.6944, 0.6574, 0.6296, 0.5, 0.4815, 0.3704, 0.412, 0.406, 0.438, 0.5019, 0.55, 0.7, 0.75,    0, 0.75]
+//let TRANSITIONS = [1,     56,     58,   59,   63,     73,    77,    118,    132,    151, 158,    160,    174,    185,   245,   284,   293,   294, 303,  330,   355,  370, 9999] // Day from start of sim that we move to next pandemic 'phase'. Last entry should be 9999
+
+// This is to fit the curve with 10%, better fitting
+//let M =           [0, 0.19, 0.19, 0.22, 0.25, 0.3444, 0.5515, 0.7, 0.7044, 0.5074, 0.50296, 0.5, 0.04815, 0.0504, 0.112, 0.2,0.338, 0.35, 0.32, 0.585, 0.6,    0, 0.6]
+//let TRANSITIONS = [1,  56,  58,   59,   63,     73,    77,    90,    118,    132,    151, 158,    160,    174,     185, 210,  230,   264,  280,    303, 330,  355, 370, 9999] // Day from start of sim that we move to next pandemic 'phase'. Last entry should be 9999
+
+//////////////////////////////////////////////////////////////////CTC Temperature model
+// This is to fit the curve with 100%
+let M =           [0, 0.45, 0.7,  0.7, 0.65, 0.63, 0.5, 0.35, 0.6, 0.7,  0.7, 0.7, 0.73,  0.35, 0.73, 0.73]
+let TRANSITIONS = [1,   58,  77,  118,  132,  151, 174,  245, 284, 303,  320, 330,  356,  387, 420,  450, 9999] // Day from start of sim that we move to next pandemic 'phase'. Last entry should be 9999
+
+// This is to fit the curve with 50%
+//let M =           [0, 0.35, 0.66,  0.7, 0.65, 0.63, 0.5, 0.35, 0.5, 0.65, 0.68, 0.69, 0.69, 0.35, 0.7, 0.7]
+//let TRANSITIONS = [1,   58,   76,  100,  132,  151, 174,  235,  274,  303,  320,  330,  356, 387, 420, 450, 9999] // Day from start of sim that we move to next pandemic 'phase'. Last entry should be 9999
+
+
+// This is to fit the curve with 50% without the effect of the Temperature (you need to remove Ct from the equation)
+//let M =           [0, 0.13, 0.6,  0.7, 0.65, 0.63, 0.6, 0.6, 0.45, 0.57, 0.59, 0.58, 0.55, 0.13, 0.55, 0.55]
+//let TRANSITIONS = [1,   58, 76,  100,  132,  151, 174,  235,  274,  303,  320,  330,  356, 387, 420, 450, 9999] // Day from start of sim that we move to next pandemic 'phase'. Last entry should be 9999
+
+
+
+// This is to fit the curve with 10%, better fitting
+//let M =           [0, 0.27, 0.585, 0.7, 0.4, 0.2, 0.55, 0.55, 0.44, 0.44, 0.42, 0.3, 0.2]
+//let TRANSITIONS = [1,   63,    77,  90, 188, 235, 293,  303, 330,  356,  387, 420, 450,9999] // Day from start of sim that we move to next pandemic 'phase'. Last entry should be 9999
+
+
+//////////////////////////////////////////////////////////////////Harvard CRW Temperature model (find the difference at each transition and multiply it as a percentage with the equation)
+// This is to fit the curve with 100%
+//let M =           [0, 0.45, 0.7,  0.7, 0.65, 0.63, 0.5, 0.36, 0.37, 0.6, 0.71,  0.71, 0.71, 0.73,  0.35, 0.73, 0.73]
+//let TRANSITIONS = [1,   58,  77,  118,  132,  151, 174,  245, 260, 284, 303,  320, 330,  356,  387, 420,  450, 9999] // Day from start of sim that we move to next pandemic 'phase'. Last entry should be 9999
+
+// This is to fit the curve with 50%
+//let M =           [0, 0.35, 0.7,  0.71, 0.65, 0.63, 0.5, 0.35, 0.5, 0.68, 0.7, 0.71, 0.71, 0.35, 0.71, 0.71]
+//let TRANSITIONS = [1,   58,   76,  100,  132,  151, 174,  235,  274,  303,  320,  330,  356, 387, 420, 450, 9999] // Day from start of sim that we move to next pandemic 'phase'. Last entry should be 9999
+
+
+// This is to fit the curve with 10%
+//let M =           [0, 0.27, 0.485, 0.7, 0.4, 0.2, 0.7, 0.5,  0.6, 0.58, 0.2]
+//let TRANSITIONS = [1,   63,    77,  90, 188, 245,  293,  303,  330, 356, 387, 9999] // Day from start of sim that we move to next pandemic 'phase'. Last entry should be 9999
+
+//////////////////////////////////////////////////////////////////Fei Wang's "High Temperature and High Humidity Reduce the Transmission of COVID-19"
+// This is to fit the curve with 100%
+//let M =           [0, 0.3, 0.45, 0.54, 0.7, 0.3, 0.37, 0.45, 0.57, 0.72, 0.8, 0.57]
+//let TRANSITIONS = [1,   56,   63,  77,  90,  245, 284,   293, 303,  330,  355,  380, 9999] // Day from start of sim that we move to next pandemic 'phase'. Last entry should be 9999
+
+// This is to fit the curve with 10%
+//let M =           [0, 0.27, 0.4, 0.7, 0.4, 0.2, 0.3, 0.4, 0.4, 0.2, 0.4]
+//let TRANSITIONS = [1,   63,  77,  90, 188, 245, 293, 303,  330, 355,  380, 9999] // Day from start of sim that we move to next pandemic 'phase'. Last entry should be 9999
+
+
+
+
+// *** End of user settings ***
