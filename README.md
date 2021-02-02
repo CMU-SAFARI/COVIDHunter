@@ -1,6 +1,10 @@
 # COVIDHunter: An Accurate, Flexible, and Environment-Aware Open-Source COVID-19 Outbreak Simulation Model
 a simulation model that evaluates the current mitigation measures (i.e., non-pharmaceutical intervention) that are applied to a region and provides insight into what strength the upcoming mitigation measure should be and for how long it should be applied, while considering the potential effect of environmental conditions. Our model accurately forecasts the numbers of infected and hospitalized patients, and deaths for a given day. Described by Alser et al. (preliminary version at ...).
 
+<p align="center">
+  <img src="https://s29068.pcdn.co/wp-content/uploads/covid-19-rendering.jpg" width="500" title="SARS-CoV-2">
+</p>
+
 ## <a name="started"></a>Getting Started
 ```
     Install Xcode
