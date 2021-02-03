@@ -6,6 +6,12 @@ The result shows that for each 1°C rise in temperature, there is a 3.67% (t-val
 # To run our model: 
 **Step 1**: download [_R software version 4.0.3._](https://www.r-project.org/) _R_ is a free software environment for statistical computing and graphics.  
 
-**Step 2**: in the R Consloe type: source("/directory of the file/TempCasesRelationship.R"), or you can run the code in "TempCasesRelationship.R" step by step by typing each command in the  R Consloe.
+**Step 2**: in the R Consloe type: 
+ <a name="started"></a>
+```
+source("/directory of the file/TempCasesRelationship.R")
+
+```
+or you can run the code in "TempCasesRelationship.R" step by step by typing each command in the  R Consloe.
 
 
