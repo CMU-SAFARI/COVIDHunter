@@ -4,14 +4,14 @@ https://www.covid19.admin.ch/en/overview
 - Smoothed data (January 7, 2021):
 https://ourworldindata.org/coronavirus/country/switzerland?country=~CHE
 
-## Oxford Stringency Index 
-https://www.bsg.ox.ac.uk/research/research-projects/coronavirus-government-response-tracker#data
-
 ## Excess deaths:
 - Information:
 https://www.bfs.admin.ch/bfs/en/home/statistics/health/state-health/mortality-causes-death.html
 - Direct link (January 7, 2021):
 https://www.bfs.admin.ch/bfs/en/home/statistics/health/state-health/mortality-causes-death.assetdetail.12607335.html
+
+## Oxford Stringency Index 
+https://www.bsg.ox.ac.uk/research/research-projects/coronavirus-government-response-tracker#data
 
 ## Imperial College London (ICL) Model:
 - Information:
