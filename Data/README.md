@@ -25,3 +25,14 @@ https://mrc-ide.github.io/global-lmic-reports/
 - Direct link (January 15, 2021):
 http://www.healthdata.org/covid/data-downloads
 
+## The London School of Hygiene & Tropical Medicine (LSHTM) Model:
+- Information:
+https://cmmid.github.io/topics/covid19/global_cfr_estimates.html
+- Direct link (January 15, 2021):
+https://raw.githubusercontent.com/cmmid/cmmid.github.io/master/topics/covid19/reports/under_reporting_estimates/under_ascertainment_estimates.csv
+
+## The Theoretical Biology Group at ETH Zurich (IBZ) Model:
+- Information:
+https://ibz-shiny.ethz.ch/covid-19-re-international/
+- Direct link (January 15, 2021):
+https://github.com/covid-19-Re/dailyRe-Data
