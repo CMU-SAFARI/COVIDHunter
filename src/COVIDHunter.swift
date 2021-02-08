@@ -15,6 +15,9 @@ let TRAVELERS_PER_DAY = 100 // Number of travelers entering country from abroad 
 let FIRST_TRAVEL_DAY = 45 // Point at which potentially infected travelers (some of whom are contagious) start entering country
 let LAST_TRAVEL_DAY = 9999 // Point at which borders are closed/all travelers placed in strict quarantine
 // Intrinsic r value excluding immunity at 15 degree C for a given population -- average number of folks an infected person gives the virus to (but some may already be immune). This is a function of the infectiousnessof the virus given normal (unaware of virus) population behavior and 15 degree C temp.
+let X = 0.02780 //the hospitalizations-to-cases ratio, for CRW-100% = 4.288% for CTC-100% = 2.780%
+let Y = 0.01739 //the deaths-to-cases ratio, for CRW-100% = 2.730% for CTC-100% = 1.739%
+
 let R0_INTRINSIC = 2.7 //https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008031#pcbi.1008031.s001
 // Brazil's model: Temperature dependence parameters
 let TEMP_SCALING_FACTOR = 0.05 // Linear scaling of infectiousness per degree temperature drop. 0.05 => 5% more infectious per degree of temperature drop
@@ -139,7 +142,7 @@ var done = false
 var weekly_spreaders = 0
 var weekly_victims = 0
 var weekly_infections = 0
-print("Day, Uninfected, Simulated cases, active, contagious, immune, travelers, R0i (intrinsic R0), R0i*(1-M) (intrinsic including migitation), R0i*Ct (temperature adjusted R0), R0i*Ct*(1-M) (temp adjusted R0 including mitigation), Rt (observed R number)")
+print("Day, Uninfected, Daily Cases, Daily Hospitalizations, Daily Deaths, Active Cases, Contagious, Immune, Travelers, R0, Ce(t), M(t), R0*(1-M(t)), R0*Ce(t), R(t)=R0*Ce(t)*(1-M(t)), Observed R(t)")
 var phase = 0 // current phase of pandemic
 var CRWphase = 0
 var VariationInCRW = 0.0
@@ -179,7 +182,7 @@ while (!done && day<NUM_DAYS) {
     }
 }
 if (!done) {
-    print("COVIDHunter model complete after \(NUM_DAYS) days. STOP Reason = Completed requested number of days (disease is still active)")
+    print("COVIDHunter model completes after \(NUM_DAYS) days. STOP Reason = Completed requested number of days (disease is still active)")
 } else {
     print("COVIDHunter model complete after \(day) days. STOP Reason = No more active disease in population.")
 }
@@ -362,12 +365,16 @@ func process_people(day: Int, phase: Int, CRWfactor: Double) -> Bool {
             }
         }
     }
+    let hospitalizations_number = String(format: "%2.3f", X * Double(newly_infected))
+    let deaths_number = String(format: "%2.3f", Y * Double(newly_infected))
     let intrinsic_r_string = String(format: "%2.3f", R0_INTRINSIC)
     let phase_string = String(format: "%2.3f", Double(R0_INTRINSIC) * (1.0-M[phase]))
     let phase_temp_r_string = String(format: "%2.3f", R0Mt)
     let temp_r_string = String(format: "%2.3f", Double(R0_INTRINSIC) * Double(Ct))
     let actual_r_string = String(format: "%2.3f", Rt)
-    print("\(day), \(POPULATION-free_person_ptr), \(newly_infected), \(infected), \(contagious), \(sick_person_ptr+immune), \(total_travelers), \(intrinsic_r_string), \(phase_string), \(temp_r_string), \(phase_temp_r_string), \(actual_r_string)")
+    let M_string = String(format: "%2.3f", M[phase])
+    let C_string = String(format: "%2.3f", Ct)
+    print("\(day+1), \(POPULATION-free_person_ptr), \(newly_infected), \(hospitalizations_number), \(deaths_number), \(infected), \(contagious), \(sick_person_ptr+immune), \(total_travelers), \(intrinsic_r_string), \(C_string), \(M_string), \(phase_string), \(temp_r_string), \(phase_temp_r_string), \(actual_r_string)")
     return contagious+infected==0 && TRAVEL_SICK_RATE==0
 }
 // Mark a new person as infected on a given day
