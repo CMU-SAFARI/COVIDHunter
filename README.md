@@ -1,5 +1,5 @@
 # COVIDHunter 🦠:construction:: An Accurate, Flexible, and Environment-Aware Open-Source COVID-19 Outbreak Simulation Model
-A COVID-19 outbreak simulation model that evaluates the current mitigation measures (i.e., non-pharmaceutical intervention) that are applied to a region and provides insight into what strength the upcoming mitigation measure should be and for how long it should be applied, while considering the potential effect of environmental conditions. Our model accurately forecasts the numbers of infected and hospitalized patients, and deaths for a given day. Described by Alser et al. (preliminary version at ...).
+A COVID-19 outbreak simulation model that evaluates the current mitigation measures (i.e., non-pharmaceutical intervention) that are applied to a region and provides insight into what strength the upcoming mitigation measure should be and for how long it should be applied, while considering the potential effect of environmental conditions. Our model accurately forecasts the numbers of infected and hospitalized patients, and deaths for a given day. Described by Alser et al. (preliminary version at https://www.medrxiv.org/content/10.1101/2021.02.06.21251265v1).
 
 
 ## <a name="demo"></a>Live Demo
@@ -97,6 +97,25 @@ If you encounter bugs or have further questions or requests, you can raise an is
 
 If you use COVIDHunter in your work, please cite:
 
-> Soon
+> Mohammed Alser, Jeremie S. Kim, Nour Almadhoun Alserr, Stefan W. Tell, Onur Mutlu, 
+> "COVIDHunter: An Accurate, Flexible, and Environment-Aware Open-Source COVID-19 Outbreak Simulation Model" 
+> medRxiv preprint **medRxiv**:10.1101/2021.02.06.21251265 (2021). [link](https://www.medrxiv.org/content/10.1101/2021.02.06.21251265v1)
+
+Below is bibtex format for citation.
+
+```bibtex
+@article {Alser2021.02.06.21251265,
+	author = {Alser, Mohammed and Kim, Jeremie S. and Almadhoun Alserr, Nour and Tell, Stefan W. and Mutlu, Onur},
+	title = {COVIDHunter: An Accurate, Flexible, and Environment-Aware Open-Source COVID-19 Outbreak Simulation Model},
+	elocation-id = {2021.02.06.21251265},
+	year = {2021},
+	doi = {10.1101/2021.02.06.21251265},
+	publisher = {Cold Spring Harbor Laboratory Press},
+	abstract = {Motivation: Early detection and isolation of COVID-19 patients are essential for successful implementation of mitigation strategies and eventually curbing the disease spread. With a limited number of daily COVID- 19 tests performed in every country, simulating the COVID-19 spread along with the potential effect of each mitigation strategy currently remains one of the most effective ways in managing the healthcare system and guiding policy-makers. We introduce COVIDHunter, a flexible and accurate COVID-19 outbreak simulation model that evaluates the current mitigation measures that are applied to a region and provides suggestions on what strength the upcoming mitigation measure should be. The key idea of COVIDHunter is to quantify the spread of COVID-19 in a geographical region by simulating the average number of new infections caused by an infected person considering the effect of external factors, such as environmental conditions (e.g., climate, temperature, humidity) and mitigation measures. Results: Using Switzerland as a case study, COVIDHunter estimates that the policy-makers need to keep the current mitigation measures for at least 30 days to prevent demand from quickly exceeding existing hospital capacity. Relaxing the mitigation measures by 50\% for 30 days increases both the daily capacity need for hospital beds and daily number of deaths exponentially by an average of 23.8x, who may occupy ICU beds and ventilators for a period of time. Unlike existing models, the COVIDHunter model accurately monitors and predicts the daily number of cases, hospitalizations, and deaths due to COVID-19. Our model is flexible to configure and simple to modify for modeling different scenarios under different environmental conditions and mitigation measures. Availability: https://github.com/CMU-SAFARI/COVIDHunterCompeting Interest StatementThe authors have declared no competing interest.Funding StatementNo external funding was received.Author DeclarationsI confirm all relevant ethical guidelines have been followed, and any necessary IRB and/or ethics committee approvals have been obtained.YesThe details of the IRB/oversight body that provided approval or exemption for the research described are given below:Research only involves theoretical epidemiological data, no IRB oversight is required.All necessary patient/participant consent has been obtained and the appropriate institutional forms have been archived.YesI understand that all clinical trials and any other prospective interventional studies must be registered with an ICMJE-approved registry, such as ClinicalTrials.gov. I confirm that any such study reported in the manuscript has been registered and the trial registration ID is provided (note: if posting a prospective study registered retrospectively, please provide a statement in the trial ID field explaining why the study was not registered in advance).Yes I have followed all appropriate research reporting guidelines and uploaded the relevant EQUATOR Network research reporting checklist(s) and other pertinent material as supplementary files, if applicable.YesThe raw data used in this paper are collected from different sources as we list in https://github.com/CMU-SAFARI/COVIDHunter/tree/main/Data. We also upload the raw data to the GitHub page of COVIDHunter: https://github.com/CMU-SAFARI/COVIDHunter/tree/main/Evaluation_Results A well-documented source code of COVIDHunter implementation is available at: https://github.com/CMU-SAFARI/COVIDHunterhttps://github.com/CMU-SAFARI/COVIDHunter/tree/main/Datahttps://github.com/CMU-SAFARI/COVIDHunter/tree/main/Evaluation_Results},
+	URL = {https://www.medrxiv.org/content/early/2021/02/08/2021.02.06.21251265},
+	eprint = {https://www.medrxiv.org/content/early/2021/02/08/2021.02.06.21251265.full.pdf},
+	journal = {medRxiv}
+}
+```
 
 [issue]: https://github.com/CMU-SAFARI/COVIDHunter/issues
