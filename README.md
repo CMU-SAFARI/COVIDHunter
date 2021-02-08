@@ -2,6 +2,10 @@
 A COVID-19 outbreak simulation model that evaluates the current mitigation measures (i.e., non-pharmaceutical intervention) that are applied to a region and provides insight into what strength the upcoming mitigation measure should be and for how long it should be applied, while considering the potential effect of environmental conditions. Our model accurately forecasts the numbers of infected and hospitalized patients, and deaths for a given day. Described by Alser et al. (preliminary version at ...).
 
 
+## <a name="demo"></a>Live Demo
+Live Demo: https://mealser.github.io/COVIDHunter
+
+
 ## <a name="started"></a>Getting Started
 ```
     Install Xcode
@@ -12,6 +16,7 @@ A COVID-19 outbreak simulation model that evaluates the current mitigation measu
 ```
 
 ## Table of Contents
+- [Live Demo](#demo)
 - [Getting Started](#started)
 - [Key Idea](#idea)
 - [Benefits of COVIDHunter](#results)
