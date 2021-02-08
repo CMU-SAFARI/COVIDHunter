@@ -84,7 +84,7 @@ total infected (all phases)=1.418% total immune (all phases)=1.230%
 Program ended with exit code: 0
 ```
 
-##  <a name="contact"></a>Getting help
+##  <a name="contact"></a>Getting Help
 If you have any suggestion for improvement, please contact alserm at ethz dot ch
 If you encounter bugs or have further questions or requests, you can raise an issue at the [issue page][issue].
 
