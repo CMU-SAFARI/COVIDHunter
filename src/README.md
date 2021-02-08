@@ -7,7 +7,7 @@
 - Change the default settings as needed, [Available parameters](#parameter)
     
     
-## <a name="parameter"></a>Available parameters
+## <a name="parameter"></a>Available Parameters
 | General Variable      | Value (Switzerland) |  Description |
 | --------------------- |:-------------------:| :------------|
 ||                        **General Settings:**                             ||
