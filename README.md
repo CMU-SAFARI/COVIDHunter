@@ -30,13 +30,15 @@ Live Demo: https://mealser.github.io/COVIDHunter
 The key idea of COVIDHunter is to quantify the spread of COVID-19 in a geographical region by calculating the daily reproduction number, R, of COVID-19 and scaling the reproduction number based on changes in both mitigation measures and environmental conditions. The R number describes how a pathogen spreads in a particular population by quantifying the average number of new infections caused by each infected person at a given point in time. The R number changes during the course of the pandemic due to the change in the ability of a pathogen to establish an infection during a season and mitigation measures that lead to the scarcity of susceptible individuals.
 
 ##  <a name="results"></a>Benefits of COVIDHunter 
-To our knowledge, there is currently no model capable of accurately monitoring the current epidemiological situation and predicting future scenarios while considering a reasonably low number of parameters and accounting for the effects of environmental conditions. In this work, we develop such a COVID-19 outbreak simulation model, COVIDHunter.
-COVIDHunter accurately forecasts for a given day:
+To our knowledge, there is currently no model capable of accurately monitoring the current epidemiological situation and predicting future scenarios while considering a reasonably low number of parameters and accounting for the effects of environmental conditions. In this work, we develop such a COVID-19 outbreak simulation model, COVIDHunter. COVIDHunter accurately forecasts for a given day:
+
 1. The reproduction number, R. 
 2. The number of infected persons.
 3. The number of hospitalized persons. 
 4. The number of deaths.
 5. The number of individuals at each stage of the COVID-19 infection (healthy, infected, contagious, and immune).
+6. The strength and the duration of each mitigation measure.
+
 COVIDHunter evaluates the effect of different current and future mitigation measures on the five numbers forecasted by COVIDHunter.
 We release the source code of the COVIDHunter implementation and show how to flexibly configure our model for any scenario and easily extend it for different measures and conditions than we account for.
 
