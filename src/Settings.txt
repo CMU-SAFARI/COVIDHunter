@@ -1,5 +1,3 @@
-
-// *** Start of user settings (change these to run an experiment) ***
 let START_MONTH = 1 // Start simulation on January 1st (use normal 1-12 representation for month here)
 let NUM_DAYS = 730 // maximum number of days simulated (2 years)
 let FIRST_INFECTION_DAY = 45 // Day first infection is imported into population.
@@ -12,6 +10,9 @@ let TRAVELERS_PER_DAY = 100 // Number of travelers entering country from abroad 
 let FIRST_TRAVEL_DAY = 45 // Point at which potentially infected travelers (some of whom are contagious) start entering country
 let LAST_TRAVEL_DAY = 9999 // Point at which borders are closed/all travelers placed in strict quarantine
 // Intrinsic r value excluding immunity at 15 degree C for a given population -- average number of folks an infected person gives the virus to (but some may already be immune). This is a function of the infectiousnessof the virus given normal (unaware of virus) population behavior and 15 degree C temp.
+let X = 0.02780 //the hospitalizations-to-cases ratio, for CRW-100% = 4.288% for CTC-100% = 2.780%
+let Y = 0.01739 //the deaths-to-cases ratio, for CRW-100% = 2.730% for CTC-100% = 1.739%
+
 let R0_INTRINSIC = 2.7 //https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008031#pcbi.1008031.s001
 // Brazil's model: Temperature dependence parameters
 let TEMP_SCALING_FACTOR = 0.05 // Linear scaling of infectiousness per degree temperature drop. 0.05 => 5% more infectious per degree of temperature drop
@@ -101,8 +102,3 @@ let TRANSITIONS = [1,   58,  77,  118,  132,  151, 174,  245, 284, 303,  320, 33
 // This is to fit the curve with 10%
 //let M =           [0, 0.27, 0.4, 0.7, 0.4, 0.2, 0.3, 0.4, 0.4, 0.2, 0.4]
 //let TRANSITIONS = [1,   63,  77,  90, 188, 245, 293, 303,  330, 355,  380, 9999] // Day from start of sim that we move to next pandemic 'phase'. Last entry should be 9999
-
-
-
-
-// *** End of user settings ***
