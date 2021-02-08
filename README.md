@@ -31,7 +31,12 @@ The key idea of COVIDHunter is to quantify the spread of COVID-19 in a geographi
 
 ##  <a name="results"></a>Benefits of COVIDHunter 
 To our knowledge, there is currently no model capable of accurately monitoring the current epidemiological situation and predicting future scenarios while considering a reasonably low number of parameters and accounting for the effects of environmental conditions. In this work, we develop such a COVID-19 outbreak simulation model, COVIDHunter.
-COVIDHunter accurately forecasts for a given day 1) the reproduction number, 2) the number of infected people, 3) the number of hospitalized people, 4) the number of deaths, and 5) number of individuals at each stage of the COVID-19 infection.
+COVIDHunter accurately forecasts for a given day:
+1. The reproduction number, R. 
+2. The number of infected persons.
+3. The number of hospitalized persons. 
+4. The number of deaths.
+5. The number of individuals at each stage of the COVID-19 infection (healthy, infected, contagious, and immune).
 COVIDHunter evaluates the effect of different current and future mitigation measures on the five numbers forecasted by COVIDHunter.
 We release the source code of the COVIDHunter implementation and show how to flexibly configure our model for any scenario and easily extend it for different measures and conditions than we account for.
 
