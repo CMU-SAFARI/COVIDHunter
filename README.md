@@ -21,7 +21,7 @@ A COVID-19 outbreak simulation model that evaluates the current mitigation measu
 - [Getting help](#contact)
 - [Citing SneakySnake](#cite)
 
-##  <a name="idea"></a>The key idea 
+##  <a name="idea"></a>The key Idea 
 The key idea of COVIDHunter is to quantify the spread of COVID-19 in a geographical region by calculating the daily reproduction number, R, of COVID-19 and scaling the reproduction number based on changes in both mitigation measures and environmental conditions. The R number describes how a pathogen spreads in a particular population by quantifying the average number of new infections caused by each infected person at a given point in time. The R number changes during the course of the pandemic due to the change in the ability of a pathogen to establish an infection during a season and mitigation measures that lead to the scarcity of susceptible individuals.
 
 ##  <a name="results"></a>Benefits of COVIDHunter 
@@ -38,7 +38,7 @@ We release the source code of the COVIDHunter implementation and show how to fle
 - Change the default settings as needed, [Available parameters](#parameter)
     
     
-## <a name="parameter"></a>Available parameters
+## <a name="parameter"></a>Available Parameters
 | General Variable      | Value (Switzerland) |  Description |
 | --------------------- |:-------------------:| :------------|
 ||                        **General Settings:**                             ||
