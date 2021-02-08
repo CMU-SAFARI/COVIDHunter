@@ -72,15 +72,15 @@ We release the source code of the COVIDHunter implementation and show how to fle
 
 ##  <a name="output">An Example of COVIDHunter Simulation Output</a>
 This is an example of the simulation output of COVIDHunter. We only show below the entries for 99th and 100th days.
-<table class="tableizer-table">
-<thead><tr class="tableizer-firstrow"><th>Day</th><th> Uninfected</th><th> Daily Cases</th><th> Daily Hospitalizations</th><th> Daily Deaths</th><th> Active Cases</th><th> Contagious</th><th> Immune</th><th> Travelers</th><th> R0</th><th> Ce(t)</th><th> M(t)</th><th> R0*(1-M(t))</th><th> R0*Ce(t)</th><th> R(t)=R0*Ce(t)*(1-M(t))</th><th> Observed R(t)</th></tr></thead><tbody>
- <tr><td>99</td><td>8533775</td><td>2136</td><td>59.381</td><td>37.145</td><td>6956</td><td>2662</td><td>112109</td><td>776</td><td>2.7</td><td>1</td><td>0.7</td><td>0.81</td><td>2.7</td><td>0.81</td><td>0.801</td></tr>
- <tr><td>100</td><td>8531868</td><td>1907</td><td>53.015</td><td>33.163</td><td>6702</td><td>2390</td><td>114769</td><td>786</td><td>2.7</td><td>1</td><td>0.7</td><td>0.81</td><td>2.7</td><td>0.81</td><td>0.8</td></tr>
- <tr><td>COVIDHunter model completes after 100 days. STOP Reason = Completed requested number of days (disease is still active)</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>total infected (all phases)=1.418% total immune (all phases)=1.230%</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
- <tr><td>Program ended with exit code: 0</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td></td></tr>
-</tbody></table>
 
+```
+Day, Uninfected, Daily Cases, Daily Hospitalizations, Daily Deaths, Active Cases, Contagious, Immune, Travelers, R0, Ce(t), M(t), R0*(1-M(t)), R0*Ce(t), R(t)=R0*Ce(t)*(1-M(t)), Observed R(t)
+99, 8533775, 2136, 59.381, 37.145, 6956, 2662, 112109, 776, 2.700, 1.000, 0.700, 0.810, 2.700, 0.810, 0.801
+100, 8531868, 1907, 53.015, 33.163, 6702, 2390, 114769, 786, 2.700, 1.000, 0.700, 0.810, 2.700, 0.810, 0.800
+COVIDHunter model completes after 100 days. STOP Reason = Completed requested number of days (disease is still active)
+total infected (all phases)=1.418% total immune (all phases)=1.230%
+Program ended with exit code: 0
+```
 
 ##  <a name="contact"></a>Getting help
 If you have any suggestion for improvement, please contact alserm at ethz dot ch
