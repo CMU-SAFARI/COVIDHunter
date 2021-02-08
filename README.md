@@ -98,7 +98,7 @@ If you encounter bugs or have further questions or requests, you can raise an is
 If you use COVIDHunter in your work, please cite:
 
 > Mohammed Alser, Jeremie S. Kim, Nour Almadhoun Alserr, Stefan W. Tell, Onur Mutlu, 
-> "COVIDHunter: An Accurate, Flexible, and Environment-Aware Open-Source COVID-19 Outbreak Simulation Model" 
+> "COVIDHunter: An Accurate, Flexible, and Environment-Aware Open-Source COVID-19 Outbreak Simulation Model", 
 > medRxiv preprint **medRxiv**:10.1101/2021.02.06.21251265 (2021). [link](https://www.medrxiv.org/content/10.1101/2021.02.06.21251265v1)
 
 Below is bibtex format for citation.
