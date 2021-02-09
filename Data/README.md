@@ -11,7 +11,16 @@ https://www.bfs.admin.ch/bfs/en/home/statistics/health/state-health/mortality-ca
 https://www.bfs.admin.ch/bfs/en/home/statistics/health/state-health/mortality-causes-death.assetdetail.12607335.html
 
 ## Oxford Stringency Index 
+- Information:
+https://www.bsg.ox.ac.uk/research/research-projects/coronavirus-government-response-tracker
+- Direct link (January 15, 2021):
 https://www.bsg.ox.ac.uk/research/research-projects/coronavirus-government-response-tracker#data
+
+## The Harvard CRW:
+- Information:
+https://projects.iq.harvard.edu/covid19/home
+- Direct link (January 15, 2021):
+https://projects.iq.harvard.edu/covid19/global
 
 ## Imperial College London (ICL) Model:
 - Information:
