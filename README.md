@@ -7,13 +7,12 @@ Switzerland Case Study (using COVIDHunter): https://mealser.github.io/COVIDHunte
 
 
 ## <a name="started"></a>Getting Started
-```html
-    Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/)
-    Add New Swift Project
-    Use COVIDHunter/src/COVIDHunter.swift
-    Run the project
-    Change the default settings as needed
-```
+1. Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/)
+2. Add New Swift Project
+3. Use COVIDHunter/src/COVIDHunter.swift
+4. Run the project
+5. Change the default settings as needed
+
 
 ## Table of Contents
 - [Switzerland Case Study (using COVIDHunter)](#demo)
