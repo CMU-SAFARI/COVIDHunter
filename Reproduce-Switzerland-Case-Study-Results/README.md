@@ -3,7 +3,7 @@ To reproduce the exact same results we presented in our COVIDHunter paper for th
 1. Install Xcode
 2. Add New Swift Project
 3. Use COVIDHunter/src/COVIDHunter.swift
-5. Change the default settings as based on each configuration file provided in this directory: https://github.com/CMU-SAFARI/COVIDHunter/tree/main/Reproduce-Switzerland-Case-Study-Results
+5. Change the default settings based on each configuration file provided in this directory: https://github.com/CMU-SAFARI/COVIDHunter/tree/main/Reproduce-Switzerland-Case-Study-Results
 6. Run the project
 
 Each configuration file's name represents the configurations we used to generate each plot as follows:
