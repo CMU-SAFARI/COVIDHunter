@@ -98,7 +98,7 @@ Program ended with exit code: 0
 
 ##  <a name="contact"></a>Getting Help
 If you have any suggestion for improvement, please contact alserm at ethz dot ch
-If you encounter bugs or have further questions or requests, you can raise an issue at the [issue page][issue].
+If you encounter bugs or have further questions or requests, you can raise an issue at the [issue page](https://github.com/CMU-SAFARI/COVIDHunter/issues).
 
 ## <a name="cite"></a>Citing COVIDHunter
 
@@ -140,5 +140,3 @@ Below is bibtex format for citation.
       primaryClass={q-bio.PE}
 }
 ```
-
-[issue]: https://github.com/CMU-SAFARI/COVIDHunter/issues
