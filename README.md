@@ -10,18 +10,21 @@ Switzerland Case Study (using COVIDHunter): https://mealser.github.io/COVIDHunte
 1. Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/)
 2. Add New Swift Project (File -> New -> Project -> macOS -> Command Line Tool)
 3. Copy the content of COVIDHunter/src/COVIDHunter.swift to main.swift
-5. Keep the default settings or change the default settings based on each configuration file provided in this directory: https://github.com/CMU-SAFARI/COVIDHunter/tree/main/Reproduce-Switzerland-Case-Study-Results
-6. Run the project
+4. Run the project
+5. [An Example of COVIDHunter Simulation Output](#output)
 
 
 ## Table of Contents
-- [Switzerland Case Study (using COVIDHunter)](#demo)
-- [Getting Started](#started)
 - [Key Idea](#idea)
 - [Benefits of COVIDHunter](#results)
-- [Using COVIDHunter](#usage)
-- [Available Parameters](#parameter)
-- [An Example of COVIDHunter Simulation Output](#output)
+- [Using COVIDHunter]()
+  - [Getting Started](#started)
+  - [An Example of COVIDHunter Simulation Output](#output)
+  - [Available Parameters](#parameter)
+- [Case Studies]()  
+   - [Switzerland Case Study (using COVIDHunter)](#demo)
+   - [Reproducing Switzerland Case Study Results](#reproduce)
+- [Supplementary Materials](#supp)
 - [Getting Help](#contact)
 - [Citing COVIDHunter](#cite)
 
@@ -94,6 +97,18 @@ COVIDHunter model completes after 100 days. STOP Reason = Completed requested nu
 total infected (all phases)=1.418% total immune (all phases)=1.230%
 Program ended with exit code: 0
 ```
+
+##  <a name="reproduce">Reproducing Switzerland Case Study Results</a>
+To reproduce the exact same results we presented in our COVIDHunter paper for the Switzerland case study please follow the following steps:
+1. Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/)
+2. Add New Swift Project (File -> New -> Project -> macOS -> Command Line Tool)
+3. Copy the content of COVIDHunter/src/COVIDHunter.swift to main.swift
+5. Change the default settings based on each configuration file provided in this directory: https://github.com/CMU-SAFARI/COVIDHunter/tree/main/Reproduce-Switzerland-Case-Study-Results
+6. Run the project
+
+##  <a name="supp">Supplementary Materials</a>
+- Page 9-14: https://arxiv.org/pdf/2102.03667.pdf
+- https://github.com/CMU-SAFARI/COVIDHunter/tree/main/Evaluation_Results
 
 ##  <a name="contact"></a>Getting Help
 If you have any suggestion for improvement, please contact alserm at ethz dot ch
