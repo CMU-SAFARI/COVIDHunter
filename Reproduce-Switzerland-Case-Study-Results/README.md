@@ -1,8 +1,8 @@
 To reproduce the exact same results we presented in our COVIDHunter paper for the Switzerland case study please follow the following steps:
 
-1. Install Xcode
-2. Add New Swift Project
-3. Use COVIDHunter/src/COVIDHunter.swift
+1. Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/)
+2. Add New Swift Project (File -> New -> Project -> macOS -> Command Line Tool)
+3. Copy the content of COVIDHunter/src/COVIDHunter.swift to main.swift
 5. Change the default settings based on each configuration file provided in this directory: https://github.com/CMU-SAFARI/COVIDHunter/tree/main/Reproduce-Switzerland-Case-Study-Results
 6. Run the project
 
