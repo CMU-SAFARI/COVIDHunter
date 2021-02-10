@@ -21,9 +21,9 @@ Switzerland Case Study (using COVIDHunter): https://mealser.github.io/COVIDHunte
 - [Key Idea](#idea)
 - [Benefits of COVIDHunter](#results)
 - [Using COVIDHunter](#usage)
-- [Available parameters](#parameter)
+- [Available Parameters](#parameter)
 - [An Example of COVIDHunter Simulation Output](#output)
-- [Getting help](#contact)
+- [Getting Help](#contact)
 - [Citing COVIDHunter](#cite)
 
 ##  <a name="idea"></a>The Key Idea 
