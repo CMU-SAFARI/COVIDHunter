@@ -8,7 +8,7 @@ Switzerland Case Study (using COVIDHunter): https://mealser.github.io/COVIDHunte
 
 ## <a name="started"></a>Getting Started
 ```
-    Install Xcode
+    Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/)
     Add New Swift Project
     Use COVIDHunter/src/COVIDHunter.swift
     Run the project
