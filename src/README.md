@@ -1,10 +1,11 @@
 
 ##  <a name="usage"></a>Using COVIDHunter
-- Install Xcode
-- Add New Swift Project
-- Use COVIDHunter/src/COVIDHunter.swift
-- Run the project
-- Change the default settings as needed, [Available parameters](#parameter)
+1. Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/)
+2. Add New Swift Project (File -> New -> Project -> macOS -> Command Line Tool)
+3. Copy the content of COVIDHunter/src/COVIDHunter.swift to main.swift
+4. Change the default settings as needed, [Available parameters](#parameter)
+5. Run the project
+6. [An Example of COVIDHunter Simulation Output](#output)
     
     
 ## <a name="parameter"></a>Available Parameters
