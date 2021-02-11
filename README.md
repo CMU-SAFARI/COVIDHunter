@@ -7,11 +7,11 @@ Switzerland Case Study (using COVIDHunter): https://mealser.github.io/COVIDHunte
 
 
 ## <a name="started"></a>Getting Started
-1. Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/)
-2. Add New Swift Project (File -> New -> Project -> macOS -> Command Line Tool)
-3. Copy the content of COVIDHunter/src/COVIDHunter.swift to main.swift
-4. Run the project
-5. [An Example of COVIDHunter Simulation Output](#output)
+1. Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/).
+2. Add New Swift Project (File -> New -> Project -> macOS -> Command Line Tool). A new file, called main.swift, will be generated.
+3. Copy the content of https://github.com/CMU-SAFARI/COVIDHunter/blob/main/src/COVIDHunter.swift to main.swift.
+4. Run the project.
+5. [An Example of COVIDHunter Simulation Output](#output).
 
 
 ## Table of Contents
@@ -45,12 +45,12 @@ COVIDHunter evaluates the effect of different current and future mitigation meas
 We release the source code of the COVIDHunter implementation and show how to flexibly configure our model for any scenario and easily extend it for different measures and conditions than we account for.
 
 ##  <a name="usage"></a>Using COVIDHunter
-1. Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/)
-2. Add New Swift Project (File -> New -> Project -> macOS -> Command Line Tool)
-3. Copy the content of COVIDHunter/src/COVIDHunter.swift to main.swift
-4. Change the default settings as needed, [Available parameters](#parameter)
-5. Run the project
-6. [An Example of COVIDHunter Simulation Output](#output)
+1. Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/).
+2. Add New Swift Project (File -> New -> Project -> macOS -> Command Line Tool). A new file, called main.swift, will be generated.
+3. Copy the content of https://github.com/CMU-SAFARI/COVIDHunter/blob/main/src/COVIDHunter.swift to main.swift.
+4. Change the default settings as needed, [Available parameters](#parameter).
+5. Run the project.
+6. [An Example of COVIDHunter Simulation Output](#output).
 
     
 ## <a name="parameter"></a>Available Parameters
@@ -101,11 +101,11 @@ Program ended with exit code: 0
 
 ##  <a name="reproduce">Reproducing Switzerland Case Study Results</a>
 To reproduce the exact same results we presented in our COVIDHunter paper for the Switzerland case study please follow the following steps:
-1. Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/)
-2. Add New Swift Project (File -> New -> Project -> macOS -> Command Line Tool)
-3. Copy the content of COVIDHunter/src/COVIDHunter.swift to main.swift
-5. Change the default settings in main.swift based on each configuration file provided in this directory: https://github.com/CMU-SAFARI/COVIDHunter/tree/main/Reproduce-Switzerland-Case-Study-Results
-6. Run the project
+1. Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/).
+2. Add New Swift Project (File -> New -> Project -> macOS -> Command Line Tool). A new file, called main.swift, will be generated.
+3. Copy the content of https://github.com/CMU-SAFARI/COVIDHunter/blob/main/src/COVIDHunter.swift to main.swift.
+5. Change the default settings in main.swift based on each configuration file provided in this directory: https://github.com/CMU-SAFARI/COVIDHunter/tree/main/Reproduce-Switzerland-Case-Study-Results.
+6. Run the project.
 
 ##  <a name="supp">Supplementary Materials</a>
 - Page 9-14: https://arxiv.org/pdf/2102.03667.pdf
