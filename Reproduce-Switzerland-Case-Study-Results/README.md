@@ -1,3 +1,13 @@
+## Case study results: 
+1. [February-March 2021](https://mealser.github.io/COVIDHunter/data/COVIDHunter-Feb-March2021.xlsx) 
+2. [January-February 2021](https://mealser.github.io/COVIDHunter/data/COVIDHunter-Jan-Feb2021.xlsx)
+
+## Case study visualizations: 
+1. [February-March 2021](https://mealser.github.io/COVIDHunter/index.html) 
+2. [January-February 2021](https://mealser.github.io/COVIDHunter/visualization/COVIDHunter-Jan-Feb2021.html)
+
+
+## Instructions
 To reproduce the exact same results we presented in our COVIDHunter paper for the Switzerland case study please follow the following steps:
 
 1. Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/)
