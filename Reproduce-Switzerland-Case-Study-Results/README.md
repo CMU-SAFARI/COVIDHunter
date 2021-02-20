@@ -8,7 +8,7 @@
 
 
 ## Instructions
-To reproduce the exact same results we presented in our COVIDHunter paper for the Switzerland case study please follow the following steps:
+To reproduce the exact same results for the Switzerland case study please follow these six steps:
 
 1. Install Xcode, [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/)
 2. Add New Swift Project (File -> New -> Project -> macOS -> Command Line Tool)
