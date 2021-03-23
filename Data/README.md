@@ -30,7 +30,7 @@ https://github.com/mrc-ide/global-lmic-reports/raw/master/data/2021-01-30_v7.csv
 
 ## Institute for Health Metrics and Evaluation (IHME) Model:
 - Information:
-https://mrc-ide.github.io/global-lmic-reports/
+https://covid19.healthdata.org/global?view=total-deaths&tab=trend
 - Direct link (January 15, 2021):
 http://www.healthdata.org/covid/data-downloads
 
