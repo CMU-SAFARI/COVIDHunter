@@ -1,10 +1,13 @@
 ## Case study results: 
-1. [February-March 2021](https://mealser.github.io/COVIDHunter/data/COVIDHunter-Feb-March2021.xlsx) 
-2. [January-February 2021](https://mealser.github.io/COVIDHunter/data/COVIDHunter-Jan-Feb2021.xlsx)
+1. [January-February 2021](https://mealser.github.io/COVIDHunter/data/COVIDHunter-Jan-Feb2021.xlsx)
+2. [February-March 2021](https://mealser.github.io/COVIDHunter/data/COVIDHunter-Feb-March2021.xlsx) 
+3. [April-May 2021](https://mealser.github.io/COVIDHunter/data/COVIDHunter-April-May2021.xlsx)
 
 ## Case study visualizations: 
-1. [February-March 2021](https://mealser.github.io/COVIDHunter/index.html) 
-2. [January-February 2021](https://mealser.github.io/COVIDHunter/visualization/COVIDHunter-Jan-Feb2021.html)
+1. [January-February 2021](https://mealser.github.io/COVIDHunter/visualization/COVIDHunter-Jan-Feb2021.html)
+2. [February-March 2021](https://mealser.github.io/COVIDHunter/visualization/COVIDHunter-Feb-March2021.html)
+3. [April-May 2021](https://mealser.github.io/COVIDHunter/index.html) 
+
 
 
 ## Instructions
