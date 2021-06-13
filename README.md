@@ -1,6 +1,19 @@
 # COVIDHunter: An Accurate, Flexible, and Environment-Aware Open-Source COVID-19 Outbreak Simulation Model
 A COVID-19 outbreak simulation model that evaluates the current mitigation measures (i.e., non-pharmaceutical intervention) that are applied to a region and provides insight into what strength the upcoming mitigation measure should be and for how long it should be applied, while considering the potential effect of environmental conditions. Our model accurately forecasts the numbers of cases, hospitalizations, and deaths for a given day. Described by Alser et al. (preliminary version at https://arxiv.org/abs/2102.03667 and https://doi.org/10.1101/2021.02.06.21251265).
 
+## :white_check_mark: COVIDHunter Version 2 (June 2021)
+- Compatable with COVIDHunter version 1
+  - The reproduction number, R. 
+  - The number of infected persons.
+  - The number of hospitalized persons. 
+  - The number of deaths.
+  - The number of individuals at each stage of the COVID-19 infection (healthy, infected, contagious, and immune).
+  - The strength and the duration of each mitigation measure.
+- Support for a mutated virus with a different R0 value.
+- Support for asymptomatic cases.
+- Support for vaccintions.
+
+
 
 ## <a name="demo"></a>Switzerland Case Study (using COVIDHunter)
 Switzerland Case Study (using COVIDHunter): https://mealser.github.io/COVIDHunter
