@@ -7,8 +7,39 @@
 5. Run the project
 6. [An Example of COVIDHunter Simulation Output](#output)
     
+## :white_check_mark: COVIDHunter Version 2 (June 2021)
+- Compatable with COVIDHunter version 1
+  - The reproduction number, R. 
+  - The number of infected persons.
+  - The number of hospitalized persons. 
+  - The number of deaths.
+  - The number of individuals at each stage of the COVID-19 infection (healthy, infected, contagious, and immune).
+  - The strength and the duration of each mitigation measure.
+- Support for a mutated virus with a different R0 value.
+- Support for asymptomatic cases.
+- Support for vaccintions.
+
+To disable the new features in Version 2, please set the following parameters `FIRST_VARIANT_DAY`, `ASYMPTOMATIC_PERCENTAGE`, and `ENABLE_VACCINATIONS` to large number (larger than `NUM_DAYS`), 0, and false, respectively.
+
     
 ## <a name="parameter"></a>Available Parameters
+### COVIDHunter Version 2 (additional parameters to Version 1)
+| General Variable      | Value (Switzerland) |  Description |
+| --------------------- |:-------------------:| :------------|
+||                        **Virus Properties:**                             ||
+| `R0_INTRINSIC_VARIANT1`     :wrench:      | 6.0                  |   The base reproduction number, R0, for the virus variant       |
+| `IMPORTED_MUTATION_RATE`    :wrench:       | 1                  |  Percentage of imported cases that are of mutated variant 1 (as of FIRST_VARIANT_DAY).  Set to 0 to disable mutations       |
+| `FIRST_VARIANT_DAY`      :wrench:     | 345                 | First day a traveller can bring in the mutated virus      |
+||                        **Asymptomatic Cases:**                             ||
+| `ASYMPTOMATIC_PERCENTAGE`    :wrench:       | 25                  |  Percentage of infections that are asymptomatic relative to symptomatic.  Asymptomatic folks gain immunity but are less contagious       |
+| `R0_ASYMPTOMATIC`      :wrench:     | 2.0                  |  The base reproduction number, R0, for the asymptomatic cases      |
+| `R0_ASYMPTOMATIC_VARIANT1` :wrench:          | 3.0                  |  The base reproduction number, R0, for the asymptomatic cases caused by the virus variant      |
+||                        **Vaccination:**                             ||
+| `ENABLE_VACCINATIONS`    :wrench:       | true                 |  Start simulation on January (use normal 1-12 representation for month here)       |
+| `FIRST_VACCINATION_DAY`   :wrench:        | 380                  |  Our model assumes that you gain immunity immediately after vaccination. Thus you can increase this number by 14 days to account for the fact that vaccination will be effective (provide immunity) after two weeks.     |
+| `VACCINATION_RATE`    :wrench:       | 0.3                  |  Percentage of population vaccinated against COVID-19 per day      |
+
+### COVIDHunter Version 1
 | General Variable      | Value (Switzerland) |  Description |
 | --------------------- |:-------------------:| :------------|
 ||                        **General Settings:**                             ||
