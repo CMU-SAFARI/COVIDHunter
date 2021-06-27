@@ -11,7 +11,7 @@ A COVID-19 outbreak simulation model that evaluates the current mitigation measu
   - The strength and the duration of each mitigation measure.
 - Support for a mutated virus with a different R0 value.
 - Support for asymptomatic cases.
-- Support for vaccintions.
+- Support for vaccinations.
 
 To disable the new features in Version 2, please set the following parameters `FIRST_VARIANT_DAY`, `ASYMPTOMATIC_PERCENTAGE`, and `ENABLE_VACCINATIONS` to large number (larger than `NUM_DAYS`), 0, and false, respectively.
 
