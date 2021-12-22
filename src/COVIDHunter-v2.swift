@@ -174,7 +174,7 @@ while (!done && day<NUM_DAYS) {
     }
     // Check for a transition to a new CRW
     if (day%365 == 0) {
-        dayInYear=0 // start new month (note approximates all months as having 30 days)
+        dayInYear=0 // start new year
     } else {
         dayInYear+=1
     }
